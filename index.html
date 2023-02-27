@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vendor Registration</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="title">Vendor Registration</div><hr>
+        <p>Sign Up as a vendor</p>
+        <div class="content">
+            <form action="https://sheetdb.io/api/v1/7ktrd53u8597j" method="post" id="Sheet1"><br>
+                <div class="input-box">
+                    <label>Business Name</label><br>
+                    <input type="text" placeholder="" class="name" name="data[Business Name]">
+                </div>
+                <div class="input-box">
+                    <label>Address</label><br>
+                    <input type="text" placeholder="Address Line 1" class="text" name="data[Address Line 1]">
+                    <input type="text" placeholder="Address Line 2" class="text" name="data[Address Line 2]"></span>
+                </div>
+                <div class="input-box">
+                    <span class="details"></span>
+                    <input type="text" placeholder="City" class="text" name="data[City]">
+                    <select class="text" name="data[Region]">
+                        <option>Region</option>
+                        <option>South Asia</option>
+                        <option>Central</option>
+                        <option>North West</option>
+                        <option>South East</option>
+                        <option>North East</option>
+                    </select>
+                </div>
+                <div class="input-box">
+                    <span class="details"></span>
+                    <input type="text" placeholder="Postal/Zip Code" class="text" name="data[Postal/Zip Code]">
+                    <select class="text" id="country" name="data[Country]">
+                        <option>India</option>
+                        <option>United States</option>
+                        <option>Italy</option>
+                        <option>Japan</option>
+                    </select>
+                </div>
+                <div class="input-box">
+                    <label>Contact Name</label><br>
+                    <input type="text" placeholder="First" class="text" name="data[Contact Name]">
+                    <input type="text" placeholder="Last" class="text" required name="data[Contact Name]">
+                </div>
+                <div class="input-box">
+                    <label>Phone Number</label><br>
+                    <input type="text" placeholder=" +91" class="text"name="data[Phone Number]">
+
+                    <input type="text" placeholder="+91" class="text" name="data[Mobile Number]" >
+                </div>
+                <div class="input-box">
+                    <label>Email Address</label><br>
+                    <input type="text" placeholder="john.deo@example.com" class="name" name="data[Email Address] " >
+                </div>
+                <div class="input-box">
+                    <input type="checkbox" id="cb" class="check-button" name="data[agree]">
+                    <label for="cb" class="check">I agree to Terms of Services</label>
+                </div>
+                <div class="input-box">
+                    <input type="Submit" class="button" value="Print">
+                    <input type="Submit" class="button2" value="Send Application" >
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+<script>
+    var form = document.getElementById('Sheet1');
+    form.addEventListener("submit", e => {
+      e.preventDefault();
+      fetch(form.action, {
+          method : "POST",
+          body: new FormData(document.getElementById("Sheet1")),
+      }).then(
+          response => response.json()
+      ).then((html) => {
+        // you can put any JS code here
+        alert('success')
+      });
+    });
+  </script>
+</html>
